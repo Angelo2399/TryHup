@@ -93,8 +93,10 @@ TryHup currently serves as:
 
 Angelo Saffo
 
-Background in IT systems and software engineering,
-with a focus on scalable architectures, governance, and moderation.
+Background in IT operations and technical environments,
+with a degree in Law, and currently studying Computer Engineering
+and Artificial Intelligence, with a strong interest in software
+architecture and full-stack development.
 
 ---
 
