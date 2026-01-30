@@ -1,46 +1,21 @@
 import GrowthIndex from "./GrowthIndex";
+import "./ContentCard.css";
 
 export default function ContentCard({ content }) {
+  const isVideo = content?.media?.type === "video";
   return (
-    <div
-      style={{
-        width: "100%",
-        maxWidth: "420px",
-        margin: "0 auto 24px",
-        borderRadius: "12px",
-        overflow: "hidden",
-        background: "#111",
-        color: "#fff",
-      }}
-    >
-      {/* Media */}
-      {content.media_type === "video" ? (
-        <video
-          src={content.media_url}
-          controls
-          style={{ width: "100%", display: "block" }}
-        />
-      ) : (
-        <img
-          src={content.media_url}
-          alt=""
-          style={{ width: "100%", display: "block" }}
-        />
-      )}
-
-      {/* Testi */}
-      <div style={{ padding: "12px" }}>
-        <p style={{ marginBottom: "8px" }}>
-          {content.creator_description}
-        </p>
-
-        {content.category && (
-          <p style={{ opacity: 0.7, fontSize: "0.85rem" }}>
-            #{content.category}
-          </p>
+    <div className="content-card">
+      <div className="content-media">
+        {isVideo ? (
+          <video src={content.media.url} controls />
+        ) : (
+          <img src={content.media.url} alt={content.title || ""} />
         )}
-
-        <GrowthIndex value={content.growth_index} />
+      </div>
+      <div className="content-body">
+        <h2 className="content-title">{content.title}</h2>
+        <p className="content-description">{content.description}</p>
+        <GrowthIndex value={content.growthIndex} />
       </div>
     </div>
   );
