@@ -1,42 +1,44 @@
-#root {
-  max-width: 1280px;
+/* Modernized global layout and header styles */
+
+.app-container {
+  max-width: 960px;
   margin: 0 auto;
   padding: 2rem;
+}
+
+.app-header {
   text-align: center;
+  margin-bottom: 2.5rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.app-title {
+  font-size: 2.75rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--foreground-color);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.app-subtitle {
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--secondary-color);
+}
+
+/* Adjust spacing for feed and cards */
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .app-title {
+    font-size: 2rem;
   }
-  to {
-    transform: rotate(360deg);
+  .app-subtitle {
+    font-size: 1rem;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .app-container {
+    padding: 1rem;
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
